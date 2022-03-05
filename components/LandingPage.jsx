@@ -1,11 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const LandingPage = () => {
   const [mouse, setMouseTag] = useState("");
-  const [transform, setTransform] = useState("");
 
   return (
-    <div className="landing-page" style={{transitionDuration: "1000ms", transform}}>
+    <div className="landing-page">
       <div className="top-section">
         <div className="content-center">
           <p 
