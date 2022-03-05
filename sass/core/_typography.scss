@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Graphik Bold';
+  src: url('../../public/fonts/graphik-bold.otf');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Graphik Medium';
+  src: url('../../public/fonts/graphik-medium.otf');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Graphik Regular';
+  src: url('../../public/fonts/graphik-regular.otf');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Graphik Light';
+  src: url('../../public/fonts/graphik-light.otf');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../public/fonts/icons.woff2') format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

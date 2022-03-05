@@ -1,0 +1,43 @@
+button {
+  cursor: pointer;
+}
+
+.primary-button {
+  font-family: "Graphik Medium";
+  border: none;
+  font-size: 22px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition-duration: 150ms;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+
+  i {
+    margin-left: 16px;
+    margin-right: 2px;
+    font-size: 28px;
+    transition-duration: 150ms;
+  }
+
+  &.filled-button {
+    background-color: #222;
+    color: #fff;
+
+    &:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+  }
+
+  &.text-button {
+    background-color: transparent;
+
+    &:hover {
+      i {
+        margin-left: 24px;
+      }
+    }
+  }
+}
