@@ -1,4 +1,4 @@
-//import '../sass/app.scss'
+import '../sass/app.scss'
 
 const App = ({ Component, pageProps }) => {
   return (
