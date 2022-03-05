@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const LandingPage = () => {
+const LandingPage = () => {
   const [mouse, setMouseTag] = useState("");
 
   return (
@@ -33,3 +33,5 @@ export const LandingPage = () => {
     </div>
   )
 }
+
+export default LandingPage;
