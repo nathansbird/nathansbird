@@ -1,34 +1,49 @@
 import React, { useState } from "react";
+import OptionList from "./OptionList";
+
+const root = ["Developer", "Entreprenuer", "Creative"];
+const paths = {
+  branches: [
+    {
+      choices: ["TUVU App", "Byzantion NFT Marketplace", "GetDoctor"]
+    },
+    {
+      choices: ["Dallas Film Club", "Collide Digital", "Klink Fundraising"]
+    },
+    {
+      choices: ["Film Photography", "Social Media"]
+    }
+  ]
+}
 
 const LandingPage = () => {
-  const [mouse, setMouseTag] = useState("");
+  const [selectDepth, setSelectDepth] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [optionTree, setOptionTree] = useState([root]);
+
+  const extractNextPath = (index) => {
+    // let nextPath = paths;
+
+    // for(let i = 0; i <= index; i++){
+    //   nextPath = nextPath.branches[i]
+    // }
+
+    // console.log('next path', nextPath);
+  }
 
   return (
     <div className="landing-page">
-      <div className="top-section">
-        <div className="content-center">
-          <p 
-            className={mouse && mouse != "developer" ? "inactive" : ""} 
-            onMouseEnter={() => setMouseTag("developer")}
-            onMouseLeave={() => setMouseTag("")}
-          >
-            developer
-          </p>
-          <p
-            className={mouse && mouse != "entrepreneur" ? "inactive" : ""}
-            onMouseEnter={() => setMouseTag("entrepreneur")}
-            onMouseLeave={() => setMouseTag("")}
-          >
-            entrepreneur
-          </p>
-          <p 
-            className={mouse && mouse != "creative" ? "inactive" : ""}
-            onMouseEnter={() => setMouseTag("creative")}
-            onMouseLeave={() => setMouseTag("")}
-          >
-            creative
-          </p>
-        </div>
+      <div className="top-section" style={{transform: `translateX(-${offset}px)`}}>
+        {optionTree.map((options, index) => {
+          return (
+            <OptionList options={options} depth={selectDepth - index} onSelect={(item, newOffset) => {
+              setSelectDepth(index+1);
+              setOffset(offset + newOffset);
+              setOptionTree([...optionTree, paths.branches[item - 1].choices])
+              extractNextPath(index + 1)
+            }}/>
+          )
+        })}
       </div>
     </div>
   )
